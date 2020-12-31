@@ -28,8 +28,24 @@ function addRaceData(json) {
 }
 
 function onSelectRace() {
+   if (document.getElementById("race-dropdown").value === "None" || document.getElementById("race-dropdown").value === "Custom" ) {
+      var headers = document.querySelectorAll('h2.race-header');
+      for(var i=0;i<headers.length;i++){
+         headers[i].style.display = 'none';
+      }
+      document.getElementById("race-ability").innerHTML = "";
+      document.getElementById("race-features").innerHTML = "";
+      document.getElementById("race-speed").innerHTML = "";
+      return;
+   }
    var raceJson = JSON.parse(document.getElementById("race-dropdown").value);
    addRaceData(raceJson);
+
+   var headers = document.querySelectorAll('h2.race-header');
+   for(var i=0;i<headers.length;i++){
+      headers[i].style.display = '';
+   }
+
    document.getElementById("race-speed").innerHTML = raceJson.speed;
    abilityText = "";
    for (ab of Object.entries(raceJson.ability[0])){

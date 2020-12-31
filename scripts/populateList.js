@@ -14,6 +14,7 @@ function populateList(id, object, isIndex, defaultName){
 
     let defaultOption = document.createElement('option');
     defaultOption.text = `Choose your ${defaultName}`;
+    defaultOption.value = "None";
 
     dropdown.add(defaultOption);
     dropdown.selectIndex = 0;
