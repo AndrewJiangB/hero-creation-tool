@@ -301,28 +301,32 @@
   }
 
   /*** START TAB BACKGROUND ***/
-  .tab-backg .grid{display:grid; grid-template-columns:repeat(6, 1fr); grid-gap:var(--padding);}
-  .tab-backg .grid > .grid1{grid-area:1/1/2/4;}
-  .tab-backg .grid > .grid2{grid-area:1/4/2/7;}
-  .tab-backg select{width:100%;}
-  .tab-backg .box-select{display:grid; grid-template-columns:repeat(2, 1fr); grid-gap:var(--vertical-pad) var(--padding);}
-  .tab-backg .box-select .delete{display:flex; align-items:center; border:2px solid transparent;}
-  .tab-backg .box-select .ico-delete{width:32px; height:32px; margin:0 5px; color:#c00;}
-  .tab-backg .box-select > .select1{grid-area:1/1/2/2;}
-  .tab-backg .box-select > .select2{grid-area:1/2/2/3;}
-  .tab-backg .box-select > .btn-add{grid-area:2/1/3/3;}
-  .tab-backg .box-select .warn{color:#c00;}
-  .tab-backg .custom-sel{grid-column:span 2; display:flex;}
+  .tab-backg{
+    .grid{display:grid; grid-template-columns:repeat(6, 1fr); grid-gap:var(--padding);}
+    .grid > .grid1{grid-area:1/1/2/4;}
+    .grid > .grid2{grid-area:1/4/2/7;}
+    select{width:100%;}
+    .box-select{display:grid; grid-template-columns:repeat(2, 1fr); grid-gap:var(--vertical-pad) var(--padding);}
+    .box-select .delete{display:flex; align-items:center; border:2px solid transparent;}
+    .box-select .ico-delete{width:32px; height:32px; margin:0 5px; color:#c00;}
+    .box-select > .select1{grid-area:1/1/2/2;}
+    .box-select > .select2{grid-area:1/2/2/3;}
+    .box-select > .btn-add{grid-area:2/1/3/3;}
+    .box-select .warn{color:#c00;}
+    .custom-sel{grid-column:span 2; display:flex;}
+    .box-remove, .box-name{margin-bottom:var(--vertical-pad);}
+    .box-add{margin-top:var(--vertical-pad);}
 
-  /* Might be generic (we might remove tab-backg) */
-  .tab-backg .section{position:relative; margin:var(--vertical-pad) 0; background:#eeede7; padding:10px var(--vertical-pad); border-radius:7px;}
-  .tab-backg .container header{display:flex; justify-content:space-between; align-items:center;}
-  .tab-backg .container.expanded header{margin-bottom:var(--vertical-pad);}
-  .tab-backg .container .ico-plus, .tab-backg .container .ico-minus{line-height:0; width:24px;}
-  .tab-backg .container h2{margin:0; border:0;}
-  .tab-backg .info-area{padding:var(--padding); background:#eeede7;}
-
+    /* Might be generic (we might remove from tab-backg) */
+    .section{position:relative; margin:var(--vertical-pad) 0; background:#eeede7; padding:10px var(--vertical-pad); border-radius:7px;}
+    .container header{display:flex; justify-content:space-between; align-items:center;}
+    .container.expanded header{margin-bottom:var(--vertical-pad);}
+    .container .ico-plus, .container .ico-minus{line-height:0; width:24px;}
+    .container h2{margin:0; border:0;}
+    .info-area{padding:var(--padding); background:#eeede7;}
+  }
   /*** END TAB BACKGROUND ***/
+
   .standard{display:none;}
 }
 

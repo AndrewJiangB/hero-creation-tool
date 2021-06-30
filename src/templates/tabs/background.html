@@ -143,17 +143,18 @@
                 </div>
 
                 <div class="custom">
-                    <header>
-                        <button>Remove Custom Background</button>
-                    </header>
+                    <div class="box-remove">
+                        <button>I don't want custom, make it a normal Background</button>
+                    </div>
 
-                    <label>How do you want to call this custom Background?</label>
-                    <input id="bg-name" type="text" value="" placeholder="Insert a background name" />
-
+                    <div class="box-name">
+                        <label>Write a custom Background name?</label>
+                        <input id="bg-name" type="text" value="" placeholder="Insert a background name" />
+                    </div>
                     <select name="bg-custom-sel" id="bg-custom-sel">
                         <option value="0" hidden>--Choose an option--</option>
                         <option value="1">I want start from an existing background</option>
-                        <option value="2">I want a blank start</option>
+                        <option value="2">I want a blank canvas start</option>
                     </select>
 
                     <section class="section box-skill">
@@ -216,14 +217,113 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="box-btn">
+                            <div class="box-add">
                                 <button>Add a skill or tool proficiency</button>
                             </div>
                         </div>
                     </section>
+
+                    <section class="section box-lang">
+                        <a class="faux" href="javascript:void(0)" title="collapse"></a>
+                        <div class="container expanded">
+                            <header>
+                                <h2>{{localize 'HCT.Common.LanguageProficiencies'}}</h2>
+                                <svg class="ico ico-minus" viewBox="0 0 24 24">
+                                    <use xlink:href="#ico-minus" />
+                                </svg>
+                            </header>
+                            <div class="box-select">
+                                <select class="grid1" name="lang1" id="lang1">
+                                    <option value="0" hidden>--Choose an option--</option>
+                                    <option value="1">Lang 1</option>
+                                    <option value="2" disabled>Lang 2</option>
+                                    <option value="3">Lang 3</option>
+                                </select>
+                                <select class="grid2" name="lang2" id="lang2">
+                                    <option value="0" hidden>--Choose an option--</option>
+                                    <option value="1">Lang 1</option>
+                                    <option value="2" disabled>Lang 2</option>
+                                    <option value="3">Lang 3</option>
+                                </select>
+
+                                <div class="custom-sel">
+                                    <select name="lang3" id="lang3">
+                                        <option value="0" hidden>--Choose an option--</option>
+                                        <option value="1">Language 1</option>
+                                        <option value="2" disabled>Language 2</option>
+                                        <option value="3">Language 3</option>
+                                    </select>
+                                    <a href="javascript:void(0)" class="lnk icon delete" title="Delete language">
+                                        <svg class="ico ico-delete" viewBox="0 0 24 24">
+                                            <use xlink:href="#ico-delete" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="box-add">
+                                <button>Add a language</button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="section box-trait">
+                        <a class="faux" href="javascript:void(0)" title="collapse"></a>
+                        <div class="container expanded">
+                            <header>
+                                <h2>{{localize 'DND5E.PersonalityTraits'}}</h2>
+
+                                <svg class="ico ico-minus" viewBox="0 0 24 24">
+                                    <use xlink:href="#ico-minus" />
+                                </svg>
+                            </header>
+                            <textarea name="trait" id="trait"></textarea>
+                        </div>
+                    </section>
+
+                    <section class="section box-ideal">
+                        <a class="faux" href="javascript:void(0)" title="collapse"></a>
+                        <div class="container expanded">
+                            <header>
+                                <h2>{{localize 'DND5E.Ideals'}}</h2>
+
+                                <svg class="ico ico-minus" viewBox="0 0 24 24">
+                                    <use xlink:href="#ico-minus" />
+                                </svg>
+                            </header>
+                            <textarea name="ideal" id="ideal"></textarea>
+                        </div>
+                    </section>
+
+                    <section class="section box-bond">
+                        <a class="faux" href="javascript:void(0)" title="collapse"></a>
+                        <div class="container expanded">
+                            <header>
+                                <h2>{{localize 'DND5E.Bonds'}}</h2>
+
+                                <svg class="ico ico-minus" viewBox="0 0 24 24">
+                                    <use xlink:href="#ico-minus" />
+                                </svg>
+                            </header>
+                            <textarea name="bond" id="bond"></textarea>
+                        </div>
+                    </section>
+
+                    <section class="section box-flaws">
+                        <a class="faux" href="javascript:void(0)" title="collapse"></a>
+                        <div class="container expanded">
+                            <header>
+                                <h2>{{localize 'DND5E.Flaws'}}</h2>
+
+                                <svg class="ico ico-minus" viewBox="0 0 24 24">
+                                    <use xlink:href="#ico-minus" />
+                                </svg>
+                            </header>
+                            <textarea name="flaw" id="flaw"></textarea>
+                        </div>
+                    </section>
                 </div>
             </form>
-
+            <!--
             <div class="grid2 info-area">
                 <p>
                     Every story has a beginning. Your character’s background reveals where you came from, how you became
@@ -521,6 +621,7 @@
                     </tbody>
                 </table>
             </div>
+          -->
         </div>
     </main>
 
