@@ -1,7 +1,7 @@
 <section id="basicsDiv" class="tab-body">
-  <h1 class='tab-header'>{{localize 'HCT.Basics.Title'}}</h1>
+    <h1 class="tab-header">{{localize 'HCT.Basics.Title'}}</h1>
 
-    <main class='tab-content'>
+    <main class="tab-content">
         <div class="form--padding">
             <form class="flexcol prototype" autocomplete="off">
                 <div class="form-group" data-hero_name>
@@ -9,29 +9,31 @@
                 </div>
                 <div class="form-group" data-hero_avatar>
                     <label class="basics-top-label">{{localize 'HCT.Basics.Avatar'}}</label>
-                    <button type="button" class="div-button file-picker centered-text" data-filepick='avatar'>
+                    <button type="button" class="div-button file-picker centered-text" data-filepick="avatar">
                         {{localize 'HCT.Basics.PickButton'}}
                     </button>
                 </div>
                 <div class="form-group" data-hero_token>
                     <label class="basics-top-label">{{localize 'HCT.Basics.Token'}}</label>
-                    <button type="button" class="div-button file-picker centered-text" data-filepick='token'>
+                    <button type="button" class="div-button file-picker centered-text" data-filepick="token">
                         {{localize 'HCT.Basics.PickButton'}}
                     </button>
                 </div>
                 <div class="form-group">
                     <label class="basics-top-label">{{localize 'HCT.Basics.Preview'}}</label>
                     <div id="avatar-token-display">
-                        <img id="avatar_img" title="Avatar" src="icons/svg/mystery-man.svg" data-filepick='avatar'>
-                        <img id="token_img" title="Token" src="icons/svg/mystery-man.svg" data-filepick='token'>
+                        <img id="avatar_img" title="Avatar" src="icons/svg/mystery-man.svg" data-filepick="avatar" />
+                        <img id="token_img" title="Token" src="icons/svg/mystery-man.svg" data-filepick="token" />
                     </div>
                 </div>
             </form>
         </div>
     </main>
 
-    <footer class='tab-footer'>
-        <button class="step-button" data-hct_back="startDiv">{{localize 'HCT.Back'}}</button>
-        <button class="step-button" data-hct_next="raceDiv" hct_race>{{localize 'HCT.Next'}}</button>
+    <footer class="tab-footer">
+        <div class="btn-box">
+            <button class="step-button" data-hct_back="startDiv">{{localize 'HCT.Back'}}</button>
+            <button class="step-button" data-hct_next="raceDiv" hct_race>{{localize 'HCT.Next'}}</button>
+        </div>
     </footer>
 </section>
