@@ -18,20 +18,6 @@
                         </select>
                     </section>
 
-                    <!-- the element start collapsed, the whole "container" element is clickable -->
-                    <section class="section box-skill">
-                        <a class="faux" href="javascript:void(0)" title="expand"></a>
-                        <div class="container collapsed">
-                            <header>
-                                <h2>{{localize 'HCT.Common.SkillProficiencies'}}</h2>
-
-                                <svg class="ico ico-plus" viewBox="0 0 24 24">
-                                    <use xlink:href="#ico-plus" />
-                                </svg>
-                            </header>
-                        </div>
-                    </section>
-
                     <section class="section box-skill">
                         <a class="faux" href="javascript:void(0)" title="collapse"></a>
                         <div class="container expanded">
@@ -40,21 +26,25 @@
                                 <svg class="ico ico-minus" viewBox="0 0 24 24">
                                     <use xlink:href="#ico-minus" />
                                 </svg>
+                                <svg class="ico ico-plus hide" viewBox="0 0 24 24">
+                                    <use xlink:href="#ico-plus" />
+                                </svg>
                             </header>
-
-                            <div class="box-select">
-                                <select class="grid1" name="skill1" id="skill1">
-                                    <option value="0" hidden>--Choose an option--</option>
-                                    <option value="1">Skill 1</option>
-                                    <option value="2" disabled>Skill 2</option>
-                                    <option value="3">Skill 3</option>
-                                </select>
-                                <select class="grid2" name="skill2" id="skill2">
-                                    <option value="0" hidden>--Choose an option--</option>
-                                    <option value="1">Skill 1</option>
-                                    <option value="2" disabled>Skill 2</option>
-                                    <option value="3">Skill 3</option>
-                                </select>
+                            <div class="content">
+                                <div class="box-select">
+                                    <select class="grid1" name="skill1" id="skill1">
+                                        <option value="0" hidden>--Choose an option--</option>
+                                        <option value="1">Skill 1</option>
+                                        <option value="2" disabled>Skill 2</option>
+                                        <option value="3">Skill 3</option>
+                                    </select>
+                                    <select class="grid2" name="skill2" id="skill2">
+                                        <option value="0" hidden>--Choose an option--</option>
+                                        <option value="1">Skill 1</option>
+                                        <option value="2" disabled>Skill 2</option>
+                                        <option value="3">Skill 3</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </section>
@@ -67,20 +57,25 @@
                                 <svg class="ico ico-minus" viewBox="0 0 24 24">
                                     <use xlink:href="#ico-minus" />
                                 </svg>
+                                <svg class="ico ico-plus hide" viewBox="0 0 24 24">
+                                    <use xlink:href="#ico-plus" />
+                                </svg>
                             </header>
-                            <div class="box-select">
-                                <select class="grid1" name="lang1" id="lang1">
-                                    <option value="0" hidden>--Choose an option--</option>
-                                    <option value="1">Lang 1</option>
-                                    <option value="2" disabled>Lang 2</option>
-                                    <option value="3">Lang 3</option>
-                                </select>
-                                <select class="grid2" name="lang2" id="lang2">
-                                    <option value="0" hidden>--Choose an option--</option>
-                                    <option value="1">Lang 1</option>
-                                    <option value="2" disabled>Lang 2</option>
-                                    <option value="3">Lang 3</option>
-                                </select>
+                            <div class="content">
+                                <div class="box-select">
+                                    <select class="grid1" name="lang1" id="lang1">
+                                        <option value="0" hidden>--Choose an option--</option>
+                                        <option value="1">Lang 1</option>
+                                        <option value="2" disabled>Lang 2</option>
+                                        <option value="3">Lang 3</option>
+                                    </select>
+                                    <select class="grid2" name="lang2" id="lang2">
+                                        <option value="0" hidden>--Choose an option--</option>
+                                        <option value="1">Lang 1</option>
+                                        <option value="2" disabled>Lang 2</option>
+                                        <option value="3">Lang 3</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </section>
@@ -94,8 +89,13 @@
                                 <svg class="ico ico-minus" viewBox="0 0 24 24">
                                     <use xlink:href="#ico-minus" />
                                 </svg>
+                                <svg class="ico ico-plus hide" viewBox="0 0 24 24">
+                                    <use xlink:href="#ico-plus" />
+                                </svg>
                             </header>
-                            <textarea name="trait" id="trait"></textarea>
+                            <div class="content">
+                                <textarea name="trait" id="trait"></textarea>
+                            </div>
                         </div>
                     </section>
 
@@ -108,8 +108,13 @@
                                 <svg class="ico ico-minus" viewBox="0 0 24 24">
                                     <use xlink:href="#ico-minus" />
                                 </svg>
+                                <svg class="ico ico-plus hide" viewBox="0 0 24 24">
+                                    <use xlink:href="#ico-plus" />
+                                </svg>
                             </header>
-                            <textarea name="ideal" id="ideal"></textarea>
+                            <div class="content">
+                                <textarea name="ideal" id="ideal"></textarea>
+                            </div>
                         </div>
                     </section>
 
@@ -122,8 +127,13 @@
                                 <svg class="ico ico-minus" viewBox="0 0 24 24">
                                     <use xlink:href="#ico-minus" />
                                 </svg>
+                                <svg class="ico ico-plus hide" viewBox="0 0 24 24">
+                                    <use xlink:href="#ico-plus" />
+                                </svg>
                             </header>
-                            <textarea name="bond" id="bond"></textarea>
+                            <div class="content">
+                                <textarea name="bond" id="bond"></textarea>
+                            </div>
                         </div>
                     </section>
 
@@ -136,8 +146,13 @@
                                 <svg class="ico ico-minus" viewBox="0 0 24 24">
                                     <use xlink:href="#ico-minus" />
                                 </svg>
+                                <svg class="ico ico-plus hide" viewBox="0 0 24 24">
+                                    <use xlink:href="#ico-plus" />
+                                </svg>
                             </header>
-                            <textarea name="flaw" id="flaw"></textarea>
+                            <div class="content">
+                                <textarea name="flaw" id="flaw"></textarea>
+                            </div>
                         </div>
                     </section>
                 </div>
@@ -167,37 +182,13 @@
                                 <svg class="ico ico-minus" viewBox="0 0 24 24">
                                     <use xlink:href="#ico-minus" />
                                 </svg>
+                                <svg class="ico ico-plus hide" viewBox="0 0 24 24">
+                                    <use xlink:href="#ico-plus" />
+                                </svg>
                             </header>
-
-                            <div class="box-select">
-                                <select name="skill1" id="skill1">
-                                    <option value="0" hidden>--Choose an option--</option>
-                                    <optgroup label="Skill">
-                                        <option value="1">Skill 1</option>
-                                        <option value="2" disabled>Skill 2</option>
-                                        <option value="3">Skill 3</option>
-                                    </optgroup>
-                                    <optgroup label="Tool proficiency">
-                                        <option value="1">Tool 1</option>
-                                        <option value="2" disabled>Tool 2</option>
-                                        <option value="3">Tool 3</option>
-                                    </optgroup>
-                                </select>
-                                <select name="skill2" id="skill2">
-                                    <option value="0" hidden>--Choose an option--</option>
-                                    <optgroup label="Skill">
-                                        <option value="1">Skill 1</option>
-                                        <option value="2" disabled>Skill 2</option>
-                                        <option value="3">Skill 3</option>
-                                    </optgroup>
-                                    <optgroup label="Tool proficiency">
-                                        <option value="1">Tool 1</option>
-                                        <option value="2" disabled>Tool 2</option>
-                                        <option value="3">Tool 3</option>
-                                    </optgroup>
-                                </select>
-                                <div class="custom-sel">
-                                    <select name="skill3" id="skill3">
+                            <div class="content">
+                                <div class="box-select">
+                                    <select name="skill1" id="skill1">
                                         <option value="0" hidden>--Choose an option--</option>
                                         <optgroup label="Skill">
                                             <option value="1">Skill 1</option>
@@ -210,15 +201,43 @@
                                             <option value="3">Tool 3</option>
                                         </optgroup>
                                     </select>
-                                    <a href="javascript:void(0)" class="lnk icon delete" title="Delete proficiency">
-                                        <svg class="ico ico-delete" viewBox="0 0 24 24">
-                                            <use xlink:href="#ico-delete" />
-                                        </svg>
-                                    </a>
+                                    <select name="skill2" id="skill2">
+                                        <option value="0" hidden>--Choose an option--</option>
+                                        <optgroup label="Skill">
+                                            <option value="1">Skill 1</option>
+                                            <option value="2" disabled>Skill 2</option>
+                                            <option value="3">Skill 3</option>
+                                        </optgroup>
+                                        <optgroup label="Tool proficiency">
+                                            <option value="1">Tool 1</option>
+                                            <option value="2" disabled>Tool 2</option>
+                                            <option value="3">Tool 3</option>
+                                        </optgroup>
+                                    </select>
+                                    <div class="custom-sel">
+                                        <select name="skill3" id="skill3">
+                                            <option value="0" hidden>--Choose an option--</option>
+                                            <optgroup label="Skill">
+                                                <option value="1">Skill 1</option>
+                                                <option value="2" disabled>Skill 2</option>
+                                                <option value="3">Skill 3</option>
+                                            </optgroup>
+                                            <optgroup label="Tool proficiency">
+                                                <option value="1">Tool 1</option>
+                                                <option value="2" disabled>Tool 2</option>
+                                                <option value="3">Tool 3</option>
+                                            </optgroup>
+                                        </select>
+                                        <a href="javascript:void(0)" class="lnk icon delete" title="Delete proficiency">
+                                            <svg class="ico ico-delete" viewBox="0 0 24 24">
+                                                <use xlink:href="#ico-delete" />
+                                            </svg>
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="box-add">
-                                <button>Add a skill or tool proficiency</button>
+                                <div class="box-add">
+                                    <button>Add a skill or tool proficiency</button>
+                                </div>
                             </div>
                         </div>
                     </section>
@@ -231,37 +250,42 @@
                                 <svg class="ico ico-minus" viewBox="0 0 24 24">
                                     <use xlink:href="#ico-minus" />
                                 </svg>
+                                <svg class="ico ico-plus hide" viewBox="0 0 24 24">
+                                    <use xlink:href="#ico-plus" />
+                                </svg>
                             </header>
-                            <div class="box-select">
-                                <select class="grid1" name="lang1" id="lang1">
-                                    <option value="0" hidden>--Choose an option--</option>
-                                    <option value="1">Lang 1</option>
-                                    <option value="2" disabled>Lang 2</option>
-                                    <option value="3">Lang 3</option>
-                                </select>
-                                <select class="grid2" name="lang2" id="lang2">
-                                    <option value="0" hidden>--Choose an option--</option>
-                                    <option value="1">Lang 1</option>
-                                    <option value="2" disabled>Lang 2</option>
-                                    <option value="3">Lang 3</option>
-                                </select>
-
-                                <div class="custom-sel">
-                                    <select name="lang3" id="lang3">
+                            <div class="content">
+                                <div class="box-select">
+                                    <select class="grid1" name="lang1" id="lang1">
                                         <option value="0" hidden>--Choose an option--</option>
-                                        <option value="1">Language 1</option>
-                                        <option value="2" disabled>Language 2</option>
-                                        <option value="3">Language 3</option>
+                                        <option value="1">Lang 1</option>
+                                        <option value="2" disabled>Lang 2</option>
+                                        <option value="3">Lang 3</option>
                                     </select>
-                                    <a href="javascript:void(0)" class="lnk icon delete" title="Delete language">
-                                        <svg class="ico ico-delete" viewBox="0 0 24 24">
-                                            <use xlink:href="#ico-delete" />
-                                        </svg>
-                                    </a>
+                                    <select class="grid2" name="lang2" id="lang2">
+                                        <option value="0" hidden>--Choose an option--</option>
+                                        <option value="1">Lang 1</option>
+                                        <option value="2" disabled>Lang 2</option>
+                                        <option value="3">Lang 3</option>
+                                    </select>
+
+                                    <div class="custom-sel">
+                                        <select name="lang3" id="lang3">
+                                            <option value="0" hidden>--Choose an option--</option>
+                                            <option value="1">Language 1</option>
+                                            <option value="2" disabled>Language 2</option>
+                                            <option value="3">Language 3</option>
+                                        </select>
+                                        <a href="javascript:void(0)" class="lnk icon delete" title="Delete language">
+                                            <svg class="ico ico-delete" viewBox="0 0 24 24">
+                                                <use xlink:href="#ico-delete" />
+                                            </svg>
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="box-add">
-                                <button>Add a language</button>
+                                <div class="box-add">
+                                    <button>Add a language</button>
+                                </div>
                             </div>
                         </div>
                     </section>
@@ -275,8 +299,13 @@
                                 <svg class="ico ico-minus" viewBox="0 0 24 24">
                                     <use xlink:href="#ico-minus" />
                                 </svg>
+                                <svg class="ico ico-plus hide" viewBox="0 0 24 24">
+                                    <use xlink:href="#ico-plus" />
+                                </svg>
                             </header>
-                            <textarea name="trait" id="trait"></textarea>
+                            <div class="content">
+                                <textarea name="trait" id="trait"></textarea>
+                            </div>
                         </div>
                     </section>
 
@@ -289,8 +318,13 @@
                                 <svg class="ico ico-minus" viewBox="0 0 24 24">
                                     <use xlink:href="#ico-minus" />
                                 </svg>
+                                <svg class="ico ico-plus hide" viewBox="0 0 24 24">
+                                    <use xlink:href="#ico-plus" />
+                                </svg>
                             </header>
-                            <textarea name="ideal" id="ideal"></textarea>
+                            <div class="content">
+                                <textarea name="ideal" id="ideal"></textarea>
+                            </div>
                         </div>
                     </section>
 
@@ -303,8 +337,13 @@
                                 <svg class="ico ico-minus" viewBox="0 0 24 24">
                                     <use xlink:href="#ico-minus" />
                                 </svg>
+                                <svg class="ico ico-plus hide" viewBox="0 0 24 24">
+                                    <use xlink:href="#ico-plus" />
+                                </svg>
                             </header>
-                            <textarea name="bond" id="bond"></textarea>
+                            <div class="content">
+                                <textarea name="bond" id="bond"></textarea>
+                            </div>
                         </div>
                     </section>
 
@@ -317,8 +356,13 @@
                                 <svg class="ico ico-minus" viewBox="0 0 24 24">
                                     <use xlink:href="#ico-minus" />
                                 </svg>
+                                <svg class="ico ico-plus hide" viewBox="0 0 24 24">
+                                    <use xlink:href="#ico-plus" />
+                                </svg>
                             </header>
-                            <textarea name="flaw" id="flaw"></textarea>
+                            <div class="content">
+                                <textarea name="flaw" id="flaw"></textarea>
+                            </div>
                         </div>
                     </section>
                 </div>

@@ -36,8 +36,6 @@
   /* Clickable objets */
   button, select{cursor:pointer;}
 
-  .lnk.icon:hover, .lnk.icon:focus{background:rgba(0, 0, 0, .08); border:2px groove #f0f0e0; border-radius:3px;}
-
   /* Font Styling */
   select, textarea{font-size:1rem;}
   h3{font-size:unset;}
@@ -57,8 +55,8 @@
     }
   }
 
-
-
+  .lnk.icon:hover, .lnk.icon:focus{background:rgba(0, 0, 0, .08); border:2px groove #f0f0e0; border-radius:3px;}
+  .hide, .collapsed .content{display:none;}
 
   .tab-body{position:relative; margin-top:var(--vertical-pad); width:100%;}
   .tab-body > header{padding-bottom:var(--vertical-pad);}

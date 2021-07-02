@@ -53,6 +53,24 @@ export default class App extends Application {
         });
 
         Utils.openTab('startDiv');
+
+        $(".section .faux").click(function(e){
+          const myTarget = $(e.target).parent().find(".container");
+          const myIcoPlus = $(e.target).parent().find(".ico-plus");
+          const myIcoMinus = $(e.target).parent().find(".ico-minus");
+          if(myTarget.hasClass("expanded")){
+            myTarget.removeClass("expanded")
+            myTarget.addClass("collapsed")
+            myIcoPlus.removeClass("hide");
+            myIcoMinus.addClass("hide")
+          }else{
+            myTarget.removeClass("collapsed")
+            myTarget.addClass("expanded")
+            $(e.target).parent().find(".ico-minus").removeClass("hide");
+            myIcoPlus.addClass("hide");
+            myIcoMinus.removeClass("hide")
+          }
+      });
     }
 
     async setupData() {
