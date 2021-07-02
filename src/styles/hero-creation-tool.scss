@@ -1,3 +1,5 @@
+.header-hct-button{margin:2px; width:97%;} /* Button visible on foundry */
+
 .hct-container{overflow:hidden; height:100%; width:100%; padding:0; margin:0; box-sizing:border-box;}
 
 /* Box sizing fix */
@@ -17,7 +19,6 @@
 .clickable, .tab-backg .box-select{position:relative; z-index:1;}
 
 /* Style reset */
-/* TODO:remove classes with .hct-select in html, and implement the style directly inside the "select" element not as class*/
 .hct-container select{
   padding:8px 5px; height:auto; border:2px groove #f0f0e0; border-radius:5px; appearance:none; width:100%;
   background:rgba(0, 0, 0, .05) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' width='24'%3E%3Cpath d='M24 24H0V0h24v24z' fill='none' /%3E%3Cpath d='M15.88 9.29L12 13.17 8.12 9.29a.996.996 0 10-1.41 1.41l4.59 4.59c.39.39 1.02.39 1.41 0l4.59-4.59a.996.996 0 000-1.41c-.39-.38-1.03-.39-1.42 0z'/%3E%3C/svg%3E") var(--bgIconPos) 50% no-repeat;
@@ -25,11 +26,14 @@
 .hct-container select:focus{box-shadow:none; outline:auto;}
 .hct-container button{box-shadow:none; margin:0;}
 .hct-container textarea{padding:10px; height:115px;}
+.hct-container p{margin:.5rem 0 1rem;}
 
 /* Clickable objets */
 .hct-container button, .hct-container select{cursor:pointer;}
 
-/* Font Styling Forms */
+/* Font Styling */
+.hct-container{font-size:1rem;}
+.hct-container h3{font-size:unset;}
 .hct-container select, .hct-container textarea{font-size:1rem; font-family:'Signika', sans-serif;}
 .hct-container .ico{display:inline-block; width:24px; height:24px;}
 
@@ -43,24 +47,20 @@
 }
 
 /* TODO: organise the other classes */
-.header-hct-button{margin:2px; width:97%;}
-.tabs{display:flex; width:100%; justify-content:space-evenly;}
 
-.tab-body{
-  padding:2% 4%;
-  border-top:none;
-  width:100%;
-  height:92%;
-  position:relative;
+.tab-body{position:relative; padding:0 var(--vertical-pad); width:100%; height:100%;}
+.tab-body > header{padding-bottom:var(--padding)}
+.tab-header{
+  width:100%; color:#c00; border-bottom-color:#c00;
+	background:linear-gradient(to bottom, #f00 3%, #900 80%);
+	-webkit-background-clip:text;
+	-webkit-text-fill-color:transparent;
 }
-
-.tab-header{width:100%;}
-.tab-content{width:100%; height:540px; overflow-y:auto;}
+.tab-content{width:100%; height:600px; overflow-y:auto;}
 .tab-footer{
   position:absolute; bottom:0; padding:10px; left:50%; transform:translateX(-50%);
   display:flex; width:320px; justify-content:space-between;
 }
-
 
 .tab-footer .step-button{
   height:35px; background:rgba(0, 0, 0, .05); border-radius:3px; border:2px groove #f0f0e0;
@@ -69,17 +69,7 @@
 .tab-footer .step-button:nth-child(even){margin-left:var(--vertical-pad);}
 .tab-footer .step-button:hover, .tab-footer .step-button:focus{background:rgba(245, 245, 230, .8);}
 
-#main-logo{
-  content:url(../assets/logo.png);
-  width:60%;
-  margin:auto;
-  display:block;
-  border:none;
-}
-
-.window-content .tabs{
-  flex:0;
-}
+.hct-container .logo{content:url(../assets/logo.png); padding:var(--padding) 0; margin:auto;}
 
 .apply-header-font h1, .apply-header-font h2{font-family:'Modesto Condensed', 'Signika', 'Arial';}
 
@@ -120,6 +110,10 @@
   font-size:1.25rem;
   display:inline-block;
   text-align:center;
+
+  background:#eeede7;
+  width:auto;
+  margin:0 5px!important;
 }
 
 .light-pane{
@@ -146,12 +140,12 @@
 }
 
 /* ## Change background color of buttons on hover */
-
-.tabs button:hover,
-.tabs button:focus,
-.tabs button.active{
+.hct-container .tablinks{font-size:1.7rem;}
+.hct-container .tabs button:hover,
+.hct-container .tabs button:focus,
+.hct-container .tabs button.active{
   /*  box-shadow:none;*/
-  transform:scale(1.08) translateY(-5px);
+  transform:scale(1.08) translateY(3px);
   /* text-shadow:0 0 5px red; */
   background:#fff;
 }
@@ -252,7 +246,6 @@
 
 .form-group label{
   font-family:'Signika', 'serif', 'Arial';
-  font-size:1.2em;
 }
 
 .form-group span,
