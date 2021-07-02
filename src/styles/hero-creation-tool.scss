@@ -16,21 +16,26 @@
 
 /* Faux link and clickable elements */
 .faux{position:absolute; z-index:0; opacity:0; top:0; right:0; bottom:0; left:0; overflow:hidden; white-space:nowrap; text-indent:200%; background:rgba(0, 0, 0, 0);} // background is IE9 fix FAUX
-.clickable, .tab-backg .box-select, .tab-backg textarea, .tab-backg .section button{position:relative; z-index:1;}
+.clickable, .tab-backg .box-select, .tab-backg textarea, .tab-backg .section button,.tab-backg .lnk{position:relative; z-index:1;}
 
 /* Style reset */
 .hct-container img{border:0;}
 .hct-container select{
-  padding:8px 5px; height:auto; border:2px groove #f0f0e0; border-radius:5px; appearance:none; width:100%;
+  height:auto; border:2px groove #f0f0e0; border-radius:5px; appearance:none; width:100%;
   background:rgba(0, 0, 0, .05) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' width='24'%3E%3Cpath d='M24 24H0V0h24v24z' class='select-svg' fill='none' /%3E%3Cpath d='M15.88 9.29L12 13.17 8.12 9.29a.996.996 0 10-1.41 1.41l4.59 4.59c.39.39 1.02.39 1.41 0l4.59-4.59a.996.996 0 000-1.41c-.39-.38-1.03-.39-1.42 0z'/%3E%3C/svg%3E") var(--bgIconPos) 50% no-repeat;
 }
-.hct-container select:focus{box-shadow:none; outline:auto;}
+.hct-container select:focus{box-shadow:none;}
+.hct-container input, .hct-container select{padding:8px 10px; height:auto;}
+.hct-container input{box-shadow:none!important;}
 .hct-container button{box-shadow:none; margin:0;}
 .hct-container textarea{padding:10px; height:115px;}
 .hct-container p{margin:.5rem 0 1rem;}
+.hct-container svg{fill:currentColor;}
 
 /* Clickable objets */
 .hct-container button, .hct-container select{cursor:pointer;}
+
+.hct-container .lnk.icon:hover, .hct-container .lnk.icon:focus{background:rgba(0, 0, 0, .08); border:2px groove #f0f0e0; border-radius:3px;}
 
 /* Font Styling */
 .hct-container, .hct-container select, .hct-container textarea{font-size:1rem;}
@@ -57,8 +62,8 @@
 	-webkit-text-fill-color:transparent;
 }
 .tab-content{width:100%; height:600px; overflow-y:auto;}
-.tab-footer{
-.hct-container .tab-header, body .hct-container .tablinks, h2{font-family:"Modesto Condensed", "Arial", "helvetica";}
+.hct-container .tab-header, body .hct-container .tablinks, .hct-container h2{font-family:"Modesto Condensed", "Arial", "helvetica";}
+
 .hct-container select, .hct-container textarea, .hct-container .container > h2{font-family:"Signika", "Arial", "helvetica";}
 .hct-container .container > h2{font-size:1.25rem; font-weight:600;}
 .hct-container .tab-header{color:#c00; background:linear-gradient(to bottom, #f00 3%, #900 80%); -webkit-background-clip:text; -webkit-text-fill-color:transparent;}
@@ -133,7 +138,7 @@ body .hct-container .tablinks{
 .hct-container .tablinks:first-child{margin-left:0;}
 .hct-container .tablinks:last-child{margin-right:0;}
 .hct-container .tablinks:hover,
-.hct-container .tablinks:focus,{
+.hct-container .tablinks:focus{
   transform:scale(1.08) translateY(3px);
   background:#fff;
 }
@@ -318,18 +323,22 @@ body .hct-container .tablinks{
 .tab-backg .grid > .grid2{grid-area:1/4/2/7;}
 .tab-backg select{width:100%;}
 .tab-backg .box-select{display:grid; grid-template-columns:repeat(2, 1fr); grid-gap:var(--vertical-pad) var(--padding);}
+
+.tab-backg .box-select .delete{display:flex; align-items:center; border:2px solid transparent;}
+.tab-backg .box-select .ico-delete{width:32px; height:32px; margin:0 5px; color:#c00;}
 .tab-backg .box-select > .select1{grid-area:1/1/2/2;}
 .tab-backg .box-select > .select2{grid-area:1/2/2/3;}
 .tab-backg .box-select > .btn-add{grid-area:2/1/3/3;}
 .tab-backg button{margin-top:var(--vertical-pad);}
 .tab-backg .box-select .warn{color:#c00;}
-.tab-backg select:invalid{background:#ccc!important;}
+.tab-backg .custom-sel{grid-column:span 2; display:flex;}
+
 
 /* Might be generic (we might remove tab-backg) */
 .tab-backg .section{position:relative; margin:var(--vertical-pad) 0; background:#eeede7; padding:10px var(--vertical-pad); border-radius:7px;}
 .tab-backg .container header{display:flex; justify-content:space-between; align-items:center;}
 .tab-backg .container.expanded header{margin-bottom:var(--vertical-pad);}
-.tab-backg .container .icon{line-height:0; font-size:36px; text-align:center; width:20px;}
+.tab-backg .container .ico-plus, .tab-backg .container .ico-minus{line-height:0; width:24px;}
 .tab-backg .container h2{margin:0; border:0;}
 .tab-backg .info-area{padding:var(--padding); background:#eeede7;}
 
