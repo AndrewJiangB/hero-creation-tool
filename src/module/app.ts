@@ -30,8 +30,8 @@ export default class App extends Application {
   static get defaultOptions() {
     const options = super.defaultOptions;
     options.template = Constants.MODULE_PATH + '/templates/app.html';
-    options.width = 720;
-    options.height = 680;
+    options.width = 1000;
+    options.height = 700;
     return options;
   }
 

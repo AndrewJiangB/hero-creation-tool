@@ -1,3 +1,63 @@
+.hct-container {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* Box sizing fix */
+.hct-container *,
+.hct-container *:before,
+.hct-container *:after {
+  box-sizing: inherit;
+}
+
+/* Style reset */
+/* TODO: remove classes with .hct-select, and implement the style directly inside the "select" element not as class*/
+.hct-container select {
+  padding: 8px 5px;
+  height: auto;
+  border: 2px groove #f0f0e0;
+  border-radius: 5px;
+  appearance: none;
+  background: rgba(0, 0, 0, 0.05)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' width='24'%3E%3Cpath d='M24 24H0V0h24v24z' fill='none' /%3E%3Cpath d='M15.88 9.29L12 13.17 8.12 9.29a.996.996 0 10-1.41 1.41l4.59 4.59c.39.39 1.02.39 1.41 0l4.59-4.59a.996.996 0 000-1.41c-.39-.38-1.03-.39-1.42 0z'/%3E%3C/svg%3E")
+    var(--bgIconPos) 50% no-repeat;
+}
+.hct-container select:focus {
+  box-shadow: none;
+  outline: auto;
+}
+.hct-container button {
+  box-shadow: none;
+  margin: 0;
+}
+.hct-container textarea {
+  padding: 10px;
+  height: 115px;
+}
+
+/* Clickable objets */
+.hct-container button,
+.hct-container select {
+  cursor: pointer;
+}
+
+/* Font Styling Forms */
+.hct-container select,
+.hct-container textarea {
+  font-size: 1rem;
+  font-family: 'Signika', sans-serif;
+}
+
+/* CSS Variables*/
+:root {
+  --vertical-pad: 15px;
+  --padding: 25px;
+  --bgIconPos: calc(100% - 8px);
+}
+
 .header-hct-button {
   margin: 2px;
   width: 97%;
@@ -94,24 +154,6 @@
   justify-content: space-between;
 }
 
-/* ## Scrollable Textareas */
-
-.infoArea {
-  border-spacing: 10px;
-  border-spacing: 15px;
-  border-collapse: seperate;
-  padding: 5px;
-  height: inherit;
-  margin-left: 50px;
-  background: rgba(255, 255, 255, 0.3);
-  transition: all 0.3s;
-}
-
-.infoArea:hover {
-  box-shadow: 0 0 5px black;
-  background: rgba(255, 255, 255, 0.5);
-}
-
 /* ## Style the buttons inside the tab */
 
 .tablinks {
@@ -153,16 +195,13 @@
 
 /* ## Change background color of buttons on hover */
 
-.tabs button:hover {
+.tabs button:hover,
+.tabs button:focus,
+.tabs button.active {
+  /*  box-shadow: none;*/
   transform: scale(1.08) translateY(-5px);
-  box-shadow: none;
-  text-shadow: 0 0 5px red;
-}
-
-.tabs button:focus {
-  box-shadow: none;
-  transform: scale(1.08) translateY(-5px);
-  text-shadow: 0 0 5px red;
+  /* text-shadow: 0 0 5px red; */
+  background: #fff;
 }
 
 /* ## Create an active/current tablink class */
@@ -170,6 +209,8 @@
 .tabs button.active {
   background-color: rgba(255, 255, 255, 0.5);
   border-bottom: 4px solid #c00;
+  border-radius: 50px;
+  text-decoration: underline;
 }
 
 /* ## Equipment */
@@ -320,11 +361,6 @@
   display: none;
   overflow-y: scroll;
   margin: 5px;
-}
-
-.hct-select {
-  font-family: 'Signika', sans-serif;
-  border: 2px groove #f0f0e0;
 }
 
 .centered-text {
