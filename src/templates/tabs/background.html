@@ -1,16 +1,15 @@
-<section id="backgroundDiv" class="tab-backg tab-body apply-header-font">
+<section id="backgroundDiv" class="tab-backg tab-body">
   <header>
     <nav class="tabs">
-      <button class="tablinks" data-hct_tab="startDiv">{{localize 'HCT.Start.Title'}}</button>
-      <button class="tablinks" data-hct_tab="basicsDiv">{{localize 'HCT.Basics.Title'}}</button>
-      <button class="tablinks" data-hct_tab="raceDiv" data-hct_race>{{localize 'DND5E.Race'}}</button>
-      <button class="tablinks" data-hct_tab="classDiv">{{localize 'ITEM.TypeClass'}}</button>
-      <button class="tablinks" data-hct_tab="abDiv">{{localize 'HCT.Abilities.Title'}}</button>
-      <button class="tablinks active" data-hct_tab="backgroundDiv">{{localize 'DND5E.Background'}}</button>
-      <button class="tablinks" data-hct_tab="eqDiv">{{localize 'DND5E.ItemTypeEquipmentPl'}}</button>
-      <button class="tablinks" data-hct_tab="spDiv">{{localize 'DND5E.ItemTypeSpellPl'}}</button>
-      <button class="tablinks" data-hct_tab="bioDiv">{{localize 'DND5E.Biography'}}</button>
-      <button class="tablinks" data-hct_tab="reviewDiv" data-hct_review>{{localize 'HCT.Review.Title'}}</button>
+      <button class="tablinks" data-hct_tab="basicsDiv"><span>{{localize 'HCT.Basics.Title'}}</span></button>
+      <button class="tablinks" data-hct_tab="raceDiv" data-hct_race><span>{{localize 'DND5E.Race'}}</span></button>
+      <button class="tablinks" data-hct_tab="classDiv"><span>{{localize 'ITEM.TypeClass'}}</span></button>
+      <button class="tablinks" data-hct_tab="abDiv"><span>{{localize 'HCT.Abilities.Title'}}</span></button>
+      <button class="tablinks active" data-hct_tab="backgroundDiv"><span>{{localize 'DND5E.Background'}}</span></button>
+      <button class="tablinks" data-hct_tab="eqDiv"><span>{{localize 'DND5E.ItemTypeEquipmentPl'}}</span></button>
+      <button class="tablinks" data-hct_tab="spDiv"><span>{{localize 'DND5E.ItemTypeSpellPl'}}</span></button>
+      <button class="tablinks" data-hct_tab="bioDiv"><span>{{localize 'DND5E.Biography'}}</span></button>
+      <button class="tablinks" data-hct_tab="reviewDiv" data-hct_review><span>{{localize 'HCT.Review.Title'}}</span></button>
     </nav>
   </header>
 
@@ -18,171 +17,220 @@
   <main class="tab-content">
     <div class="grid">
       <form class="grid1" action="">
-        <section class="box-choose">
-          <select name="background" id="background">
-            <option value="0">--Choose an option--</option>
-            <option value="1" class="custom">Custom Background*</option>
-            <option value="2">Acolyte</option>
-            <option value="3">Sage</option>
-            <option value="4">Spy</option>
-          </select>
-        </section>
-
         <!-- only when a Background is selected show the rest of the content -->
 
         <!-- "Standard" class has no customization interaction  -->
 
         <div class="standard">
+          <section class="box-choose">
+            <select name="background" id="background">
+              <option value="0" hidden>--Choose a background for your character--</option>
+              <option value="1">Create a custom background</option>
+              <option value="2">Acolyte</option>
+              <option value="3">Sage* (Note: Custom has asterisk)</option>
+              <option value="4">Spy*</option>
+            </select>
+          </section>
+
           <!-- the element start collapsed, the whole "container" element is clickable -->
           <section class="section box-skill">
             <a class="faux" href="javascript:void(0)" title="expand"></a>
-            <header class="container collapsed">
-              <h2>{{localize 'HCT.Common.SkillProficiencies'}}</h2>
-              <div class="icon">
-                <svg class="ico ico-plus" viewBox="0 0 24 24">
-                  <use xlink:href="#ico-plus" />
-                </svg>
-              </div>
-            </header>
+            <div class="container collapsed">
+              <header>
+                <h2>{{localize 'HCT.Common.SkillProficiencies'}}</h2>
+                <div class="icon">
+                  <svg class="ico ico-plus" viewBox="0 0 24 24">
+                    <use xlink:href="#ico-plus" />
+                  </svg>
+                </div>
+              </header>
+            </div>
           </section>
 
           <section class="section box-skill">
             <a class="faux" href="javascript:void(0)" title="collapse"></a>
-            <header class="container expanded">
-              <h2>{{localize 'HCT.Common.SkillProficiencies'}}</h2>
-              <div class="icon">
-                <svg class="ico ico-minus" viewBox="0 0 24 24">
-                  <use xlink:href="#ico-minus" />
-                </svg>
-              </div>
-            </header>
+            <div class="container expanded">
+              <header>
+                <h2>{{localize 'HCT.Common.SkillProficiencies'}}</h2>
+                <div class="icon">
+                  <svg class="ico ico-minus" viewBox="0 0 24 24">
+                    <use xlink:href="#ico-minus" />
+                  </svg>
+                </div>
+              </header>
 
-            <div class="box-select">
-              <select class="grid1" name="skill1" id="skill1">
-                <option value="0">--Choose an option--</option>
-                <option value="1">Skill 1</option>
-                <option value="2" disabled>Skill 2</option>
-                <option value="3">Skill 3</option>
-              </select>
-              <select class="grid2" name="skill2" id="skill2">
-                <option value="0">--Choose an option--</option>
-                <option value="1">Skill 1</option>
-                <option value="2" disabled>Skill 2</option>
-                <option value="3">Skill 3</option>
-              </select>
+              <div class="box-select">
+                <select class="grid1" name="skill1" id="skill1">
+                  <option value="0" hidden>--Choose an option--</option>
+                  <option value="1">Skill 1</option>
+                  <option value="2" disabled>Skill 2</option>
+                  <option value="3">Skill 3</option>
+                </select>
+                <select class="grid2" name="skill2" id="skill2">
+                  <option value="0" hidden>--Choose an option--</option>
+                  <option value="1">Skill 1</option>
+                  <option value="2" disabled>Skill 2</option>
+                  <option value="3">Skill 3</option>
+                </select>
+              </div>
             </div>
           </section>
 
           <section class="section box-lang">
             <a class="faux" href="javascript:void(0)" title="collapse"></a>
-            <header class="container expanded">
-              <h2>{{localize 'HCT.Common.LanguageProficiencies'}}</h2>
-              <div class="icon">
-                <svg class="ico ico-minus" viewBox="0 0 24 24">
-                  <use xlink:href="#ico-minus" />
-                </svg>
+            <div class="container expanded">
+              <header>
+                <h2>{{localize 'HCT.Common.LanguageProficiencies'}}</h2>
+                <div class="icon">
+                  <svg class="ico ico-minus" viewBox="0 0 24 24">
+                    <use xlink:href="#ico-minus" />
+                  </svg>
+                </div>
+              </header>
+              <div class="box-select">
+                <select class="grid1" name="lang1" id="lang1">
+                  <option value="0" hidden>--Choose an option--</option>
+                  <option value="1">Lang 1</option>
+                  <option value="2" disabled>Lang 2</option>
+                  <option value="3">Lang 3</option>
+                </select>
+                <select class="grid2" name="lang2" id="lang2">
+                  <option value="0" hidden>--Choose an option--</option>
+                  <option value="1">Lang 1</option>
+                  <option value="2" disabled>Lang 2</option>
+                  <option value="3">Lang 3</option>
+                </select>
               </div>
-            </header>
-            <div class="box-select">
-              <select class="grid1" name="lang1" id="lang1">
-                <option value="0">--Choose an option--</option>
-                <option value="1">Lang 1</option>
-                <option value="2" disabled>Lang 2</option>
-                <option value="3">Lang 3</option>
-              </select>
-              <select class="grid2" name="lang2" id="lang2">
-                <option value="0">--Choose an option--</option>
-                <option value="1">Lang 1</option>
-                <option value="2" disabled>Lang 2</option>
-                <option value="3">Lang 3</option>
-              </select>
             </div>
           </section>
 
           <section class="section box-trait">
             <a class="faux" href="javascript:void(0)" title="collapse"></a>
-            <header class="container expanded">
-              <h2>{{localize 'DND5E.PersonalityTraits'}}</h2>
-              <div class="icon">
-                <svg class="ico ico-minus" viewBox="0 0 24 24">
-                  <use xlink:href="#ico-minus" />
-                </svg>
-              </div>
-            </header>
-            <textarea name="trait" id="trait"></textarea>
+            <div class="container expanded">
+              <header>
+                <h2>{{localize 'DND5E.PersonalityTraits'}}</h2>
+                <div class="icon">
+                  <svg class="ico ico-minus" viewBox="0 0 24 24">
+                    <use xlink:href="#ico-minus" />
+                  </svg>
+                </div>
+              </header>
+              <textarea name="trait" id="trait"></textarea>
+            </div>
           </section>
 
           <section class="section box-ideal">
             <a class="faux" href="javascript:void(0)" title="collapse"></a>
-            <header class="container expanded">
-              <h2>{{localize 'DND5E.Ideals'}}</h2>
-              <div class="icon">
-                <svg class="ico ico-minus" viewBox="0 0 24 24">
-                  <use xlink:href="#ico-minus" />
-                </svg>
-              </div>
-            </header>
-            <textarea name="ideal" id="ideal"></textarea>
+            <div class="container expanded">
+              <header>
+                <h2>{{localize 'DND5E.Ideals'}}</h2>
+                <div class="icon">
+                  <svg class="ico ico-minus" viewBox="0 0 24 24">
+                    <use xlink:href="#ico-minus" />
+                  </svg>
+                </div>
+              </header>
+              <textarea name="ideal" id="ideal"></textarea>
+            </div>
           </section>
 
           <section class="section box-bond">
             <a class="faux" href="javascript:void(0)" title="collapse"></a>
-            <header class="container expanded">
-              <h2>{{localize 'DND5E.Bonds'}}</h2>
-              <div class="icon">
-                <svg class="ico ico-minus" viewBox="0 0 24 24">
-                  <use xlink:href="#ico-minus" />
-                </svg>
-              </div>
-            </header>
-            <textarea name="bond" id="bond"></textarea>
+            <div class="container expanded">
+              <header>
+                <h2>{{localize 'DND5E.Bonds'}}</h2>
+                <div class="icon">
+                  <svg class="ico ico-minus" viewBox="0 0 24 24">
+                    <use xlink:href="#ico-minus" />
+                  </svg>
+                </div>
+              </header>
+              <textarea name="bond" id="bond"></textarea>
+            </div>
           </section>
 
           <section class="section box-flaws">
             <a class="faux" href="javascript:void(0)" title="collapse"></a>
-            <header class="container expanded">
-              <h2>{{localize 'DND5E.Flaws'}}</h2>
-              <div class="icon">
-                <svg class="ico ico-minus" viewBox="0 0 24 24">
-                  <use xlink:href="#ico-minus" />
-                </svg>
-              </div>
-            </header>
-            <textarea name="flaw" id="flaw"></textarea>
+            <div class="container expanded">
+              <header>
+                <h2>{{localize 'DND5E.Flaws'}}</h2>
+                <div class="icon">
+                  <svg class="ico ico-minus" viewBox="0 0 24 24">
+                    <use xlink:href="#ico-minus" />
+                  </svg>
+                </div>
+              </header>
+              <textarea name="flaw" id="flaw"></textarea>
+            </div>
           </section>
         </div>
 
-        <!-- This is the custom content -->
         <div class="custom">
+          Do you want to start create from an existing background?
+          *select*
+
+          Name of the background
+          *input*
+
+
           <section class="section box-skill">
             <a class="faux" href="javascript:void(0)" title="collapse"></a>
-            <header class="container expanded">
-              <h2>{{localize 'HCT.Common.SkillProficiencies'}}</h2>
-              <div class="icon">
-                <svg class="ico ico-minus" viewBox="0 0 24 24">
-                  <use xlink:href="#ico-minus" />
-                </svg>
-              </div>
-            </header>
+            <div class="container expanded">
+              <header>
+                <h2>{{localize 'HCT.Common.SkillProficiencies'}}</h2>
+                <div class="icon">
+                  <svg class="ico ico-minus" viewBox="0 0 24 24">
+                    <use xlink:href="#ico-minus" />
+                  </svg>
+                </div>
+              </header>
 
-            <div class="box-select">
-              <select class="grid1" name="skill1" id="skill1">
-                <option value="0">--Choose an option--</option>
-                <option value="-1">--Delete a skill--</option>
-                <option value="1">Skill 1</option>
-                <option value="2" disabled>Skill 2</option>
-                <option value="3">Skill 3</option>
-              </select>
-              <select class="grid2" name="skill2" id="skill2">
-                <option value="0">--Choose an option--</option>
-                <option value="-1">--Delete a skill--</option>
-                <option value="1">Skill 1</option>
-                <option value="2" disabled>Skill 2</option>
-                <option value="3">Skill 3</option>
-              </select>
+              <div class="box-select">
+                <select class="grid1" name="skill1" id="skill1">
+                  <option value="0" hidden>--Choose an option--</option>
+                  <optgroup label="Skill">
+                    <option value="1">Skill 1</option>
+                    <option value="2" disabled>Skill 2</option>
+                    <option value="3">Skill 3</option>
+                  </optgroup>
+                  <optgroup label="Tool proficiency">
+                    <option value="1">Tool 1</option>
+                    <option value="2" disabled>Tool 2</option>
+                    <option value="3">Tool 3</option>
+                  </optgroup>
+                </select>
+                <select class="grid2" name="skill2" id="skill2">
+                  <option value="0" hidden>--Choose an option--</option>
+                  <optgroup label="Skill">
+                    <option value="1">Skill 1</option>
+                    <option value="2" disabled>Skill 2</option>
+                    <option value="3">Skill 3</option>
+                  </optgroup>
+                  <optgroup label="Tool proficiency">
+                    <option value="1">Tool 1</option>
+                    <option value="2" disabled>Tool 2</option>
+                    <option value="3">Tool 3</option>
+                  </optgroup>
+                </select>
+                <select class="grid3" name="skill3" id="skill3">
+                  <option value="0" hidden>--Choose an option--</option>
+                  <option value="-1" class="warn">--Delete this field 🗑️--</option>
+                  <optgroup label="Skill">
+                    <option value="1">Skill 1</option>
+                    <option value="2" disabled>Skill 2</option>
+                    <option value="3">Skill 3</option>
+                  </optgroup>
+                  <optgroup label="Tool proficiency">
+                    <option value="1">Tool 1</option>
+                    <option value="2" disabled>Tool 2</option>
+                    <option value="3">Tool 3</option>
+                  </optgroup>
+                </select>
+              </div>
+              <div class="box-btn">
+                <button>Add a skill or tool proficiency</button>
+              </div>
             </div>
-            <button>Add a Skill</button>
-            <button>Add a Tool proficiency</button>
           </section>
         </div>
       </form>

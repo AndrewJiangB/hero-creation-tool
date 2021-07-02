@@ -18,116 +18,100 @@ import { Step } from './Step';
 import { HeroOption } from './HeroOption';
 
 export default class App extends Application {
-  actorId?: string;
-  readonly steps: Array<Step>;
+    actorId?: string;
+    readonly steps: Array<Step>;
 
-  constructor() {
-    super();
-    this.actorId = undefined;
-    this.steps = [BasicsTab, AbilitiesTab, RaceTab, ClassTab, BackgroundTab, EquipmentTab, SpellsTab, BioTab];
-  }
-
-  static get defaultOptions() {
-    const options = super.defaultOptions;
-    options.template = Constants.MODULE_PATH + '/templates/app.html';
-    options.width = 1000;
-    options.height = 700;
-    return options;
-  }
-
-  async openForActor(actorId?: string) {
-    this.options.title = game.i18n.localize('HCT.WindowTitle');
-    console.log(`${Constants.LOG_PREFIX} | Opening for ${actorId ? 'actor id: ' + actorId : 'new actor'}`);
-    if (actorId) this.actorId = actorId;
-    for (const step of this.steps) {
-      step.clearOptions();
-    }
-    this.render(true, { log: true });
-  }
-
-  activateListeners() {
-    console.log(`${Constants.LOG_PREFIX} | Binding listeners`);
-
-    // listeners specific for each tab
-    for (const step of this.steps) {
-      step.setListeners();
+    constructor() {
+        super();
+        this.actorId = undefined;
+        this.steps = [BasicsTab, AbilitiesTab, RaceTab, ClassTab, BackgroundTab, EquipmentTab, SpellsTab, BioTab];
     }
 
-    // set listeners for tab navigation
-    $('[data-hct_tab]').on('click', function () {
-      Utils.openTab($(this).data('hct_tab'));
-    });
-    $('[data-hct_back]').on('click', function () {
-      Utils.openTab($(this).data('hct_back'));
-    });
-    $('[data-hct_next]').on('click', function () {
-      Utils.openTab($(this).data('hct_next'));
-    });
-
-    $('[data-hct_submit]').on('click', (event) => {
-      this.buildActor();
-    });
-
-    Utils.openTab('startDiv');
-  }
-
-  async setupData() {
-    for (const step of this.steps) {
-      step.setSourceData();
+    static get defaultOptions() {
+        const options = super.defaultOptions;
+        options.template = Constants.MODULE_PATH + '/templates/app.html';
+        options.width = 1000;
+        options.height = 700;
+        return options;
     }
-  }
 
-  renderChildrenData() {
-    for (const step of this.steps) {
-      step.renderData();
-    }
-  }
-
-  private async buildActor() {
-    console.log(`${Constants.LOG_PREFIX} | Building actor`);
-    const newActor = new HeroData();
-    let errors = false;
-    // yeah, a loop label, sue me.
-    mainloop: for (const step of this.steps) {
-      for (const opt of step.getOptions()) {
-        if (this.requiredOptionNotFulfilled(opt)) {
-          errors = true;
-          break mainloop;
+    async openForActor(actorId?: string) {
+        this.options.title = game.i18n.localize('HCT.WindowTitle');
+        console.log(`${Constants.LOG_PREFIX} | Opening for ${actorId ? 'actor id: ' + actorId : 'new actor'}`);
+        if (actorId) this.actorId = actorId;
+        for (const step of this.steps) {
+            step.clearOptions();
         }
-        opt.applyToHero(newActor);
-      }
+        this.render(true, { log: true });
     }
-    if (!errors) {
-      console.log(newActor);
-      // calculate whatever needs inter-tab values like HP
-      calculateStartingHp(newActor);
 
-      Actor.create(newActor);
-      this.close();
-    }
-  }
+    activateListeners() {
+        console.log(`${Constants.LOG_PREFIX} | Binding listeners`);
 
-  private requiredOptionNotFulfilled(opt: HeroOption): boolean {
-    const key = opt.key;
-    if (key === 'name' && !opt.isFulfilled()) {
-      // TODO consider if it would make sense to include a filter to make sure a race and class has been selected
-      // on Foundry the only *required* field to create an actor is Name, as seen on Foundry's vanilla new actor window.
-      const errorMessage = game.i18n.format('HCT.Creation.RequiredOptionNotFulfilled', { opt: opt.key });
-      ui.notifications?.error(errorMessage);
-      return true;
+        $('[data-hct_submit]').on('click', (event) => {
+            this.buildActor();
+        });
+
+        Utils.openTab('startDiv');
     }
-    return false;
-  }
+
+    async setupData() {
+        for (const step of this.steps) {
+            step.setSourceData();
+        }
+    }
+
+    renderChildrenData() {
+        for (const step of this.steps) {
+            step.renderData();
+        }
+    }
+
+    private async buildActor() {
+        console.log(`${Constants.LOG_PREFIX} | Building actor`);
+        const newActor = new HeroData();
+        let errors = false;
+        // yeah, a loop label, sue me.
+        mainloop: for (const step of this.steps) {
+            for (const opt of step.getOptions()) {
+                if (this.requiredOptionNotFulfilled(opt)) {
+                    errors = true;
+                    break mainloop;
+                }
+                opt.applyToHero(newActor);
+            }
+        }
+        if (!errors) {
+            console.log(newActor);
+            // calculate whatever needs inter-tab values like HP
+            calculateStartingHp(newActor);
+
+            Actor.create(newActor);
+            this.close();
+        }
+    }
+
+    private requiredOptionNotFulfilled(opt: HeroOption): boolean {
+        const key = opt.key;
+        if (key === 'name' && !opt.isFulfilled()) {
+            // TODO consider if it would make sense to include a filter to make sure a race and class has been selected
+            // on Foundry the only *required* field to create an actor is Name, as seen on Foundry's vanilla new actor window.
+            const errorMessage = game.i18n.format('HCT.Creation.RequiredOptionNotFulfilled', { opt: opt.key });
+            ui.notifications?.error(errorMessage);
+            return true;
+        }
+        return false;
+    }
 }
 function calculateStartingHp(newActor: HeroData) {
-  const totalCon = newActor.data?.abilities?.con?.value;
-  const raceAndConHp: number = totalCon ? Utils.getAbilityModifierValue(totalCon) : 0;
-  const classHp: number = newActor.data?.attributes.hp.max
-    ? Number.parseInt(newActor.data?.attributes.hp.max as any)
-    : 10;
+    const totalCon = newActor.data?.abilities?.con?.value;
+    const raceAndConHp: number = totalCon ? Utils.getAbilityModifierValue(totalCon) : 0;
+    const classHp: number = newActor.data?.attributes.hp.max
+        ? Number.parseInt(newActor.data?.attributes.hp.max as any)
+        : 10;
 
-  const startingHp = raceAndConHp + classHp;
-  console.log(`Starting HP: ${startingHp}`);
-  newActor.data!.attributes.hp.max = startingHp;
-  newActor.data!.attributes.hp.value = startingHp;
+    const startingHp = raceAndConHp + classHp;
+    console.log(`Starting HP: ${startingHp}`);
+    newActor.data!.attributes.hp.max = startingHp;
+    newActor.data!.attributes.hp.value = startingHp;
 }
